@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>mark</title>
+<style>
+body {
+  background-color: #f4f4f4;
+}
+body * {
+  box-sizing: border-box;
+}
+
+.table-users {
+
+
+
+  margin: 4em auto;
+  overflow: hidden;
+  width: 1000px;
+
+}
+.header{
+border-bottom: solid 2px;
+
+}
+.table-striped{
+border-left: solid  black 1px;
+border-bottom: solid  black 1px;
+border-right: solid  black 1px;
+}
+</style>
+
+
+
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+	<link rel="stylesheet" href="/static/dashboard/header.css">
+	<link rel="stylesheet" href="/static/dashboard/header1.css">
+	<link rel="stylesheet" href="/static/dashboard/css/bootstrap.min.css">
+
+
+
+</head>
+<body>
+
+
+<header class="header-two-bars">
+
+	<div class="header-first-bar">
+
+		<div class="header-limiter">
+
+			<h1><a href="#">Smart Vehicle System</a></h1>
+
+			<nav>
+
+				<a href="#" >Contact us</a>
+				<a href="#">About Us</a>
+
+			</nav>
+
+			<a href="/dashboard/logout/" class="logout-button">Logout</a>
+		</div>
+
+	</div>
+
+
+
+</header>
+
+
+
+
+
+<body>
+<div class="table-users">
+  <div class="table-users">
+   <div class="header"><h3><center>Today's Ride Data</h3></center></div>
+
+   <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Source</th>
+      <th>Destination</th>
+	  <th>Time at ride start</th>
+	  <th>No of Over-Speed</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for x in ridelist %}
+    <tr>
+      <th scope="row"><a href="/dashboard/map/?rid={{ x.id }}">{{ x.id }}</a></th>
+      <td>{{ x.source }}</td>
+	     <td>{{ x.dest }}</td>
+      <td>{{ x.time }}</td>
+      <td>{{ x.overspeeding }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</div>
+  </div>
+  </center>
+</body>
+</html>

@@ -1,0 +1,61 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Google Maps</title>
+    <script src="https://maps.googleapis.com/maps/api/js" type="text/javascript"></script>
+  </head>
+  <body onunload="GUnload()">
+
+    <div id="map" style="width: 800px; height: 600px"></div>
+    <div id="distance"></div>
+
+    <noscript><b>JavaScript must be enabled in order for you to use Google Maps.</b>
+      However, it seems JavaScript is either disabled or not supported by your browser.
+      To view Google Maps, enable JavaScript by changing your browser options, and then
+      try again.
+    </noscript>
+
+    <script type="text/javascript">
+
+      /*var latpoints = [19.605344,19.601023,19.599289,19.593232];
+      var lonpoints = [74.183853,74.184270,74.183948,74.183355]
+      var label = ['Start','Safe:50','overspeeding:100','End'];*/
+
+      {% autoescape off %}
+      var latpoints = {{ latpoints }};
+      var lonpoints = {{ longpoints }};
+      var label = {{ labels }};
+      {% endautoescape %}
+
+      var myLatLng = new google.maps.LatLng(19.605344,74.183853);
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 14,
+        center: myLatLng
+      });
+
+      function create_marker(latt,long,label)
+      {
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(latt,long),
+          map: map,
+          title: label
+        });
+        var infowindow = new google.maps.InfoWindow({
+          content: label
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      }
+
+      for(var i=0;i<latpoints.length;i++){
+        create_marker(latpoints[i],lonpoints[i],label[i]);
+      }
+
+    </script>
+  </body>
+
+</html>

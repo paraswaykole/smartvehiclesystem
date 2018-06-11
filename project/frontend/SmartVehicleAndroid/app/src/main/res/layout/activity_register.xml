@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.project.smartvehicle.RegisterActivity">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Driver Name"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp"
+        android:id="@+id/editText1" />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Driver Phone"
+        android:ems="10"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/editText2"
+        android:layout_below="@+id/editText1"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Vehicle Model"
+        android:ems="10"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/editText3"
+        android:layout_below="@+id/editText2"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Vehicle Number"
+        android:ems="10"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/editText4"
+        android:layout_below="@+id/editText3"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="Password"
+        android:ems="10"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/editText5"
+        android:layout_below="@+id/editText4"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="City / Region"
+        android:ems="10"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/editText6"
+        android:layout_below="@+id/editText5"/>
+
+    <Button
+        android:text="Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
+        android:textColor="#FFF"
+        android:id="@+id/btn_register" />
+
+
+</RelativeLayout>
